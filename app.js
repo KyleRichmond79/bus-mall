@@ -31,3 +31,17 @@ new TestProd ('unicorn', 'imgs/unicorn.jpg');
 new TestProd ('usb', 'usb.gif');
 new TestProd ('water-can', 'imgs/water-can.jpg');
 new TestProd ('wine-glass', 'imgs/wine-glass.jpg');
+
+// function randomNumArray (min, max) {
+//   var getThreeProd = [];
+//   for (var i = 0; i < 3; i++) {
+//     getThreeProd.push(Math.floor(Math.random() * (min, max) + min));
+//   }
+//   while (getThreeProd[0] === getThreeProd[1] || getThreeProd[1] === getThreeProd[2] || getThreeProd[0] === getThreeProd[2]) {
+//
+//   }
+// }
+function displayProd() {
+  var at = [];
+  
+}
