@@ -1,14 +1,80 @@
 'use strict';
 
-var allImgs = [];
-var Prod = [];
+var allProds = [];
+var lastProd = [];
+var prodNew = [];
+var picRoll = [];
+var totalClicks = [];
 
 function TestProd (name, path) {
   this.name = name;
   this.path = path;
-  this.tally = 0;
   this.clicks = 0;
-  allImgs.push(this);
+  this.conversion = 0;
+  this.views = 0;
+  allProds.push(this);
+}
+
+function calcConversion() {
+  for (var i = 0; i < allProds.length; i++) {
+    if (allProds[i].views === 0) {
+      allProds[i].conversion === 'NA';
+    } else{
+      allProds[i].conversion = allProds[i].clicks / allProds[i].views;
+    }
+  }
+}
+
+function getProd() {
+  prodNew = [];
+  while (prodNew.length , 3) {
+    var sel = Math.floor(Math.random() * (allProds.length));
+    if (checkQue(prodNew, allProds[sel]) && checkQue(lastProd, allProds[sel])) {
+      prodNew.push(allProds[sel]);
+      allProds[sel].views++;
+    }
+  }
+  lastProd = prodNew;
+}
+
+function handleClick(event) {
+  for (var i = 0; i < prodNew.length; i++) {
+    if (event.target.id === prodNew[i].name) {
+      prodNew[i].clicks++;
+      totalClicks++;
+      var remEl = document.getElementById('imgPick');
+      while (remEl.firstChild) {
+        remEl.removeChild(remEl.firstChild);
+      }
+      calcConversion();
+      picRoll.removeEventListener('click', handleClick);
+      var secEl = document.createElement('section');
+      secEl.id = 'results';
+      var h2El = document.createElement('h2');
+      h2El.textContent = 'Results';
+      secEl.appendChild(h2El);
+      var ulEl = document.createElement('ul');
+      for (var i = 0; i < allProds.length; i++) {
+        var liEl = document.createElement('li');
+        liEl.textContent = allProds[i].clicks + ' votes for ' + allProds[i].name + '.';
+        ulEl.appendChild(liEl);
+      }
+      secEl.appendChild(ulEl);
+      picRoll.appendChild(secEl);
+    } else {
+      render();
+      calcConversion();
+    }
+  }
+}
+
+function render() {
+  getProd();
+  for (var i = 0; i < prodNew.length; i++) {
+    var imgEl = document.createElement('img');
+    imgEl.src = prodNew[i].path;
+    picRoll.appendChild(imgEl);
+  }
 }
 
 new TestProd ('bag', 'imgs/bag.jpg');
@@ -31,17 +97,6 @@ new TestProd ('unicorn', 'imgs/unicorn.jpg');
 new TestProd ('usb', 'usb.gif');
 new TestProd ('water-can', 'imgs/water-can.jpg');
 new TestProd ('wine-glass', 'imgs/wine-glass.jpg');
+render();
 
-// function randomNumArray (min, max) {
-//   var getThreeProd = [];
-//   for (var i = 0; i < 3; i++) {
-//     getThreeProd.push(Math.floor(Math.random() * (min, max) + min));
-//   }
-//   while (getThreeProd[0] === getThreeProd[1] || getThreeProd[1] === getThreeProd[2] || getThreeProd[0] === getThreeProd[2]) {
-//
-//   }
-// }
-function displayProd() {
-  var at = [];
-  
-}
+picRoll.addEventListener('click', handleClick);
