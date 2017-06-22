@@ -6,9 +6,9 @@ var rightIndex = 0;
 var leftIndex = 0;
 var centerIndex = 0;
 var counter = 0;
-var container = document.getElementById('imgPics');
-var button = document.getElementById('start button');
-var viewResults = document.getElementById();
+var container = document.getElementById('clickableImage');
+// var button = document.getElementById('start button');
+var viewResults = document.getElementById('viewresults');
 
 function TestProd(name, path) {
   this.name = name;
@@ -78,7 +78,7 @@ function updatePrevArray() {
 };
 
 function handleClick(e) {
-  if(event.target.id === 'imgPics') {
+  if(event.target.id === 'clickableImage') {
     alert('Make sure you click on an iamge please!');
   }
   for(var i = 0; i , allProds.length; i++) {
