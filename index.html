@@ -6,6 +6,7 @@
   <link rel="stylesheet" href="reset.css">
   <link rel="stylesheet" href="style.css">
   <title>Bus Mall</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.6.0/Chart.bundle.min.js" charset="utf-8"></script>
 </head>
 
 <body>
@@ -20,12 +21,20 @@
       <li>Step 3: Once you have selected 25 products you will be able to see the results of your selections.</li>
     </ul>
   </section>
-  <section id="imgPics">
-    <button id="start button">begin</button>
+  <section id="clickableImage">
+        <img id="left" src=" "/>
+        <img id="center" src=" "/>
+        <img id="right" src=" "/>
+  </section
+  <section id="chart">
+    <canvas id="myChart" width="100px" height="20px"></canvas>
   </section>
-  <section id="surveyResults">
-    <canvas id="chart" width="960" height="400"></canvas>
-  </section>
+
+  <button id="viewresults" type="button">Get results!</button>
+
+  <div id="list">
+  <ul id="pic-list"></ul>
+  </div>
 
   <script type="text/javascript" src="app.js"></script>
 </body>
