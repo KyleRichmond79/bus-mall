@@ -1,11 +1,115 @@
 * {
-  border: 1px solid black;
+
 }
 
 body {
-  border: 1px solid black;
+  background-color: grey;
+  height: 100%;
 }
 
-#imgPics {
-  background-color: pink;
+.full-width-background {
+   margin-left: -20px;
+   margin-right: -20px;
+   z-index: -10;
+ }
+
+ .fwb-black {
+   background-color: black;
+   z-index: -10;
+ }
+
+.green-box {
+  background-color: lime;
+  padding: 50px 50px;
+  margin: 70px;
+  width: 200px;
+  height: 150px;
+  font-size: 50px;
+  font-family: sans-serif;
+  color: blue;
+
+}
+
+h2 {
+  font-size: 30px;
+  margin: 25px;
+  font-family: sans-serif;
+  color: blue;
+  padding: 20px 50px;
+
+}
+
+#instructions {
+  font-size: 25px;
+  padding-left: 10px;
+  margin: 20px;
+  font-family: sans-serif;
+  color: blue;
+}
+
+p {
+  font-size: 20px;
+  font-family: sans-serif;
+  color: blue;
+  padding-left: 700px;
+  padding-bottom: 20px;
+}
+
+li {
+  padding-left: 40px;
+}
+
+img {
+  display: block-inline;
+  margin: 2px;
+  padding-left: 100px;
+  padding-top: 10px;
+}
+
+#list {
+  padding: 60px;
+}
+
+#pic-list {
+  font-size: 20px;
+  font-family: sans-serif;
+}
+
+#chart {
+  padding-left: 80px;
+  padding-right: 20px;
+}
+
+#left{
+  width: 250px;
+  height: 250px;
+  margin-left: 95px;
+}
+
+#center {
+  width: 250px;
+  height: 250px;
+}
+
+#right {
+  width: 250px;
+  height: 250px;
+}
+
+button {
+  border: none;
+  padding: 10px 30px;
+  background: black;
+  color: blue;
+  border-radius: 3px;
+  font-size: 18px;
+  margin: 50px 50px 50px 50px;
+  transition: 350ms all;
+  cursor: pointer;
+  float: right;
+  position: ;
+}
+
+button:hover {
+  background: lime;
 }
