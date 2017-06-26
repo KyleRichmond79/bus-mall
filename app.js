@@ -85,6 +85,7 @@ function updatePreviousArray() {
 function handleClick(event){
   if(event.target.id === 'clickableImage') {
     alert('Make sure you click on an image!');
+
   }
   for(var i = 0; i < allProducts.length; i++){
     if (event.target.alt === allProducts[i].name){
